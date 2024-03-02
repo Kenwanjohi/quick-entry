@@ -1,7 +1,7 @@
 import fp from "fastify-plugin";
 
 export default fp(
-  async function accountsAutoHooks(fastify, opts) {
+  async function sessionsAutoHooks(fastify, opts) {
     const users = fastify.mongo.db.collection("users");
 
     fastify.decorate("usersDataSource", {

@@ -20,7 +20,7 @@ export default fp(async function authPlugin(fastify, opts) {
   // Create JWT token
   fastify.decorateRequest("createToken", async function ({ expiresIn }) {
     const token = await fastify.jwt.sign(
-      { id: this.user.id },
+      { userId: this.user.userId },
       {
         jti: randomUUID(),
         expiresIn,
