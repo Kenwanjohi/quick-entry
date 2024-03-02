@@ -40,7 +40,7 @@ export default fp(
           request.user = { userId, username };
           const accessToken = await request.createToken({ expiresIn: "30m" });
           reply.code(201);
-          return { registered: true, accessToken };
+          return { accessToken };
         } catch (err) {
           reply.code(500);
           return { registered: false };
