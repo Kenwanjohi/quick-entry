@@ -1,9 +1,9 @@
-import fp from "fastify-plugin";
-import mongodb from "@fastify/mongodb";
+import fp from 'fastify-plugin'
+import mongodb from '@fastify/mongodb'
 
-export default fp(async function authPlugin(fastify, opts) {
+export default fp(async function authPlugin (fastify, opts) {
   fastify.register(mongodb, {
     forceClose: true,
-    url: process.env.MONGO_URI,
-  });
-});
+    url: process.env.MONGO_URI
+  })
+})
