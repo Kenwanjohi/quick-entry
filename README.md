@@ -6,6 +6,39 @@ It was bootstrapped with [fastify-cli](https://www.npmjs.com/package/fastify-cli
 
 `fastify generate . --esm --standardlint`
 
+**Project structure**
+
+```
+
+├── README.md
+├── app.js
+├── package-lock.json
+├── package.json
+├── plugins
+│ ├── auth.js
+│ ├── db.js
+│ └── sensible.js
+├── routes
+│ ├── accounts
+│ │ ├── autohooks.js
+│ │ ├── routes.js
+│ │ └── schemas
+│ ├── entries
+│ │ ├── autoHooks.js
+│ │ └── routes.js
+│ ├── root.js
+│ └── sessions
+│ ├── autoHooks.js
+│ └── routes.js
+├── test
+│ ├── helper.js
+│ └── routes
+│ ├── example.test.js
+│ └── root.test.js
+└── utils.js
+
+```
+
 ## Accessing Swagger API Documentation
 
 ### Production Environment
@@ -63,3 +96,7 @@ Run the test cases.
 ### `npm run lint`
 
 Run linter and fix code style issues
+
+```
+
+```
