@@ -10,7 +10,6 @@ export const options = {}
 
 export default async function (fastify, opts) {
   // Place here your custom code!
-
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
@@ -18,7 +17,7 @@ export default async function (fastify, opts) {
   // through your application
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'plugins'),
-    options: Object.assign({}, opts)
+    options: Object.assign({ MONGO_URI: process.env.MONGO_URI }, opts)
   })
 
   // This loads all plugins defined in routes
