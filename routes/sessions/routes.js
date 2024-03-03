@@ -7,6 +7,7 @@ export default fp(
       '/login',
       {
         schema: {
+          tags: ['Authentication'],
           body: {
             title: 'User Login',
             description: 'User login details',

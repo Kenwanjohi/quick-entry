@@ -8,6 +8,7 @@ export default fp(
       '/register',
       {
         schema: {
+          tags: ['Registration'],
           body: {
             title: 'New user',
             description: 'New user details',
