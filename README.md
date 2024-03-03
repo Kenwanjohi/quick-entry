@@ -87,6 +87,19 @@ Set your secrets with `fly secret set JWT_SECRET="" MONGO_URI=""`
 
 ## Available Scripts for development
 
+Before running the commands
+
+### Environment Configuration
+
+- Create a copy of the `.env.sample` file named `.env` in the project root.
+- Replace the placeholder values in the `.env` file with your actual configuration.
+
+```
+NODE_ENV=development
+MONGO_URI=mongodb://localhost:27017/quick-entry
+JWT_SECRET=jwtsignsecret
+```
+
 In the project directory, you can run:
 
 ### `npm run dev`
