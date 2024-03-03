@@ -3,6 +3,11 @@ import Swagger from "@fastify/swagger";
 import SwaggerUI from "@fastify/swagger-ui";
 
 export default fp(async function swaggerPlugin(fastify, opts) {
+  const baseURL =
+    process.env.NODE_ENV === "production"
+      ? "https://quick-entry.fly.dev/"
+      : "http://127.0.0.1:3000/";
+
   fastify.register(Swagger, {
     openapi: {
       info: {
@@ -12,10 +17,7 @@ export default fp(async function swaggerPlugin(fastify, opts) {
       },
       servers: [
         {
-          url: "http://127.0.0.1:3000/",
-        },
-        {
-          url: "https://quick-entry.fly.dev/",
+          url: baseURL,
         },
       ],
       tags: [
