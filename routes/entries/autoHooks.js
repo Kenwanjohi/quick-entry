@@ -33,7 +33,7 @@ export default fp(
           data: { ...entry.data, ...updatedEntry },
           updatedAt: now
         })
-        const updatedDocument = await entries.updateOne(
+        const updatedDocument = await entries.findOneAndUpdate(
           { _id: new ObjectId(id), userId: new ObjectId(userId) },
           {
             $set: {
