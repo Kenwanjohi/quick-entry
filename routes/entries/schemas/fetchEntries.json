@@ -1,0 +1,20 @@
+{
+  "$id": "schema:entry:fetch",
+  "tags": ["Entries"],
+  "response": {
+    "200": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "500": {
+      "type": "object",
+      "properties": {
+        "error": { "type": "string" }
+      },
+      "required": ["error"]
+    }
+  }
+}

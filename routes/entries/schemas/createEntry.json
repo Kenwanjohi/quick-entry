@@ -1,0 +1,21 @@
+{
+  "$id": "schema:entry:create",
+  "tags": ["Entries"],
+  "body": {
+    "type": "object"
+  },
+  "response": {
+    "201": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" }
+      }
+    },
+    "500": {
+      "type": "object",
+      "properties": {
+        "error": { "type": "string" }
+      }
+    }
+  }
+}

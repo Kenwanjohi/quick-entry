@@ -1,0 +1,31 @@
+{
+  "$id": "schema:entry:update",
+  "tags": ["Entries"],
+  "params": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" }
+    },
+    "required": ["id"]
+  },
+  "body": {
+    "type": "object"
+  },
+  "response": {
+    "204": {},
+    "404": {
+      "type": "object",
+      "properties": {
+        "error": { "type": "string" }
+      },
+      "required": ["error"]
+    },
+    "500": {
+      "type": "object",
+      "properties": {
+        "error": { "type": "string" }
+      },
+      "required": ["error"]
+    }
+  }
+}

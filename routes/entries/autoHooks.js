@@ -1,8 +1,11 @@
 import fp from 'fastify-plugin'
 import { ObjectId } from '@fastify/mongodb'
+import schemas from './schemas/loader.js'
 export default fp(
   async function entriesAutoHooks (fastify, opts) {
     const entries = fastify.mongo.db.collection('entries')
+
+    fastify.register(schemas)
 
     fastify.decorate('entriesDataSource', {
       async createEntry (userId, entry) {
