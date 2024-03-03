@@ -9,8 +9,9 @@ export default fp(
         const { userId } = request.user
         const entry = request.body
         try {
-          await fastify.entriesDataSource.createEntry(userId, entry)
-          reply.code(201).send()
+          const id = await fastify.entriesDataSource.createEntry(userId, entry)
+          reply.code(201)
+          return { id }
         } catch (error) {
           reply.code(500)
           return { error: 'Failed to create' }
@@ -52,7 +53,7 @@ export default fp(
             reply.code(404)
             return { error: 'Entry not found' }
           }
-          return result
+          reply.code(204).send()
         } catch (error) {
           reply.code(500)
           return { error: 'Failed to update entry' }
