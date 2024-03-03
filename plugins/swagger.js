@@ -1,56 +1,56 @@
-import fp from "fastify-plugin";
-import Swagger from "@fastify/swagger";
-import SwaggerUI from "@fastify/swagger-ui";
+import fp from 'fastify-plugin'
+import Swagger from '@fastify/swagger'
+import SwaggerUI from '@fastify/swagger-ui'
 
-export default fp(async function swaggerPlugin(fastify, opts) {
+export default fp(async function swaggerPlugin (fastify, opts) {
   const baseURL =
-    process.env.NODE_ENV === "production"
-      ? "https://quick-entry.fly.dev/"
-      : "http://127.0.0.1:3000/";
+    process.env.NODE_ENV === 'production'
+      ? 'https://quick-entry.fly.dev/'
+      : 'http://127.0.0.1:3000/'
 
   fastify.register(Swagger, {
     openapi: {
       info: {
-        title: "Quick Entries API Documentation",
-        description: "An API for managing user dynamic data entries",
-        version: "1.0.0",
+        title: 'Quick Entries API Documentation',
+        description: 'An API for managing user dynamic data entries',
+        version: '1.0.0'
       },
       servers: [
         {
-          url: baseURL,
-        },
+          url: baseURL
+        }
       ],
       tags: [
         {
-          name: "Registration",
-          description: "Endpoints related to user registration.",
+          name: 'Registration',
+          description: 'Endpoints related to user registration.'
         },
         {
-          name: "Authentication",
-          description: "Endpoints related to user authentication.",
+          name: 'Authentication',
+          description: 'Endpoints related to user authentication.'
         },
         {
-          name: "Entries",
-          description: "Endpoints related to managing user data entries.",
-        },
+          name: 'Entries',
+          description: 'Endpoints related to managing user data entries.'
+        }
       ],
       components: {
         securitySchemes: {
           bearerAuth: {
-            type: "http",
-            scheme: "bearer",
-            bearerFormat: "JWT",
-          },
-        },
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT'
+          }
+        }
       },
       security: [
         {
-          bearerAuth: [],
-        },
-      ],
-    },
-  });
+          bearerAuth: []
+        }
+      ]
+    }
+  })
   fastify.register(SwaggerUI, {
-    routePrefix: "/documentation",
-  });
-});
+    routePrefix: '/documentation'
+  })
+})
