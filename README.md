@@ -9,34 +9,43 @@ It was bootstrapped with [fastify-cli](https://www.npmjs.com/package/fastify-cli
 **Project structure**
 
 ```
-
+├── Dockerfile
 ├── README.md
 ├── app.js
+├── fly.toml
 ├── package-lock.json
 ├── package.json
 ├── plugins
-│ ├── auth.js
-│ ├── db.js
-│ └── sensible.js
+│   ├── auth.js
+│   ├── db.js
+│   ├── sensible.js
+│   └── swagger.js
 ├── routes
-│ ├── accounts
-│ │ ├── autohooks.js
-│ │ ├── routes.js
-│ │ └── schemas
-│ ├── entries
-│ │ ├── autoHooks.js
-│ │ └── routes.js
-│ ├── root.js
-│ └── sessions
-│ ├── autoHooks.js
-│ └── routes.js
+│   ├── accounts
+│   │   ├── autohooks.js
+│   │   ├── routes.js
+│   │   └── schemas
+│   ├── entries
+│   │   ├── autoHooks.js
+│   │   ├── routes.js
+│   │   └── schemas
+│   │       ├── createEntry.json
+│   │       ├── deleteEntry.json
+│   │       ├── fetchEntries.json
+│   │       ├── loader.js
+│   │       └── updateEntry.json
+│   ├── routes.js
+│   └── sessions
+│       ├── autoHooks.js
+│       └── routes.js
 ├── test
-│ ├── helper.js
-│ └── routes
-│ ├── example.test.js
-│ └── root.test.js
+│   ├── helper.js
+│   └── routes
+│       ├── accounts.test.js
+│       ├── entries.test.js
+│       ├── root.test.js
+│       └── sessions.test.js
 └── utils.js
-
 ```
 
 ## Accessing Swagger API Documentation
