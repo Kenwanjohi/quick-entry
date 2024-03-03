@@ -6,6 +6,16 @@ It was bootstrapped with [fastify-cli](https://www.npmjs.com/package/fastify-cli
 
 `fastify generate . --esm --standardlint`
 
+## Accessing Swagger API Documentation
+
+### Production Environment
+
+The Swagger documentation for the API in the production environment is available at [https://quick-entry.fly.dev/documentation](https://quick-entry.fly.dev/documentation) You can use this interface to explore and try out the API in the production environment.
+
+### Development Environment
+
+The Swagger documentation for the API is available at [http://127.0.0.1:3000/documentation](http://127.0.0.1:3000/documentation) when running in development mode. You can use this interface to explore and try out the API.
+
 ## Database
 
 The project uses **MongoDB** - It uses a JSON-like storage model and doesn’t require a predefined database schema making it suitable for the project requirements
